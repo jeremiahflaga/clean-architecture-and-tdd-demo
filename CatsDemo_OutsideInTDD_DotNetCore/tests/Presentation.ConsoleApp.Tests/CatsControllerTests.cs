@@ -19,7 +19,7 @@ namespace Presentation.ConsoleApp.Tests
             controller.Create(name, title);
 
             // assert
-            throw new NotImplementedException();
+            Assert.True(interactor.IsExecuteCalled);
         }
     }
 }
