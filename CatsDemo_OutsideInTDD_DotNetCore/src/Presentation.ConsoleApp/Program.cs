@@ -16,10 +16,11 @@ namespace Presentation.ConsoleApp
                         if (args[1].ToLower() == "cat")
                         {
                             string catName = args[2];
-                            string filename = args[3];
+                            string catTitle = args[3];
+                            string filename = args[4];
                             using (StreamWriter writer = File.CreateText(filename))
                             {
-                                writer.WriteLine(catName);
+                                writer.WriteLine(string.Format("{0}, {1}", catName, catTitle));
                             }
                         }
                         break;
