@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Interactors;
+using Interactors.CreateCat;
 
 namespace Presentation.ConsoleApp
 {
