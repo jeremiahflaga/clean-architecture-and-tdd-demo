@@ -7,16 +7,17 @@ namespace Presentation.ConsoleApp
 {
     public class CatsController
     {
-        private ICreateCatInteractor interactor;
+        private ICreateCatInteractor _interactor;
 
         public CatsController(ICreateCatInteractor interactor)
         {
-            this.interactor = interactor;
+            _interactor = interactor;
         }
 
         public void Create(string name, string title)
         {
-            
+            var request = new CreateCatRequest(name, title);
+            _interactor.Execute(request);
         }
     }
 }
