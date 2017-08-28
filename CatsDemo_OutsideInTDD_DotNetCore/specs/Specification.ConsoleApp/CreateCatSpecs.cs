@@ -6,7 +6,8 @@ namespace Specification.ConsoleApp
 {
     public class CreateCatSpecs
     {
-        String _name = "";
+        string _name = "";
+        string _title = "";
 
         public CreateCatSpecs()
         {
@@ -17,6 +18,7 @@ namespace Specification.ConsoleApp
         private void GivenTheFollowCatInfo()
         {
             _name = "Kang Kang";
+            _title = "The Great";
         }
 
         private void WhenICreateACat()
@@ -29,7 +31,7 @@ namespace Specification.ConsoleApp
 
             // 1. run the console app
             // 2. make a request to add a new cat
-            string[] args = { "CREATE", "cat", _name, "c:\\temp\\output.txt" };
+            string[] args = { "CREATE", "cat", _name, _title, "c:\\temp\\output.txt" };
             Presentation.ConsoleApp.Program.Main(args);
         }
 
@@ -40,7 +42,7 @@ namespace Specification.ConsoleApp
             using (StreamReader reader = File.OpenText("c:\\temp\\output.txt"))
             {
                 string line = reader.ReadLine();
-                Assert.Contains(_name, line);
+                Assert.Contains(string.Format("{0}, {1}", _name, _title), line);
             }
         }
     }
