@@ -17,7 +17,7 @@ namespace Presentation.ConsoleApp.Tests
             controller.Create(name, title);
 
             // assert
-            // TODO:
+            throw new NotImplementedException();
         }
     }
 }
