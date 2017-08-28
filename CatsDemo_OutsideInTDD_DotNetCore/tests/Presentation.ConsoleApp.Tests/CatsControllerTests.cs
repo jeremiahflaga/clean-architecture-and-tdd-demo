@@ -1,3 +1,4 @@
+using Interactors;
 using System;
 using Xunit;
 
@@ -11,7 +12,8 @@ namespace Presentation.ConsoleApp.Tests
             // arrange
             string name = "Kang Kang";
             string title = "The Great";
-            var controller = new CatsController();
+            var interactor = new CreateCatInteractorFake();
+            var controller = new CatsController(interactor);
 
             // act
             controller.Create(name, title);

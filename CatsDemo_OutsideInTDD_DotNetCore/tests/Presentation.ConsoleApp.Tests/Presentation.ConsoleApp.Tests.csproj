@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Interactors\Interactors.csproj" />
     <ProjectReference Include="..\..\src\Presentation.ConsoleApp\Presentation.ConsoleApp.csproj" />
   </ItemGroup>
 
