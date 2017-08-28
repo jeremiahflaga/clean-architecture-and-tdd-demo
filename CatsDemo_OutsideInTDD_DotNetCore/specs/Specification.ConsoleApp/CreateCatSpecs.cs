@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Xunit;
 
 namespace Specification.ConsoleApp
@@ -20,21 +21,27 @@ namespace Specification.ConsoleApp
 
         private void WhenICreateACat()
         {
+            // 0. clear the file first
+            using (StreamWriter writer = File.CreateText("c:\\temp\\output.txt"))
+            {
+                writer.Flush();
+            }
+
             // 1. run the console app
             // 2. make a request to add a new cat
-            string[] args = { "CREATE", "cat", _name };
-            ConsoleApp.Program.Main(args);
+            string[] args = { "CREATE", "cat", _name, "c:\\temp\\output.txt" };
+            Presentation.ConsoleApp.Program.Main(args);
         }
 
         [Fact]
         public void ThenItShouldAddTheNewCatToTheListOfCats()
         {
-            // 3. make a request to get all cats
-            string[] args = { "GET", "cat", "c:\\temp\\output.txt" };
-            ConsoleApp.Program.Main(args);
-
-            // 4. check whether the new cat is in the list of cats
-            throw new NotImplementedException();
+            // 3. check whether the new cat is in the list of cats
+            using (StreamReader reader = File.OpenText("c:\\temp\\output.txt"))
+            {
+                string line = reader.ReadLine();
+                Assert.Contains(_name, line);
+            }
         }
     }
 }
