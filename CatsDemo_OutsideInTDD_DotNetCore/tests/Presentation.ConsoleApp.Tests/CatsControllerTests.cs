@@ -7,7 +7,7 @@ namespace Presentation.ConsoleApp.Tests
     public class CatsControllerTests
     {
         [Fact]
-        public void WhenCreateIsCalledTheExcecuteMethodOfInteractorShouldBeCalled()
+        public void WhenTheCreateMethodIsCalledTheExcecuteMethodOfInteractorShouldBeCalled()
         {
             // arrange
             var interactor = new FakeCreateCatInteractor();
@@ -21,7 +21,7 @@ namespace Presentation.ConsoleApp.Tests
         }
 
         [Fact]
-        public void WhenCreateIsCalledTheAppropriateRequestShouldBeCreated()
+        public void WhenTheCreateMethodIsCalledTheAppropriateRequestShouldBeCreated()
         {
             // arrange
             string name = "Kang Kang";
