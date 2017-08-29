@@ -5,17 +5,19 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{6AF9F56D-5AB1-483B-84DB-36AD79DCFE4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specification.ConsoleApp", "specs\Specification.ConsoleApp\Specification.ConsoleApp.csproj", "{BE4530E8-8934-47BA-B7A5-B8F2902D8BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Specification.ConsoleApp", "specs\Specification.ConsoleApp\Specification.ConsoleApp.csproj", "{BE4530E8-8934-47BA-B7A5-B8F2902D8BA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3F8A965A-06D5-4541-8D5B-B4148B22D0AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.ConsoleApp", "src\Presentation.ConsoleApp\Presentation.ConsoleApp.csproj", "{4D6A54C1-3AD2-408E-9CAD-A0C3DB6F7DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.ConsoleApp", "src\Presentation.ConsoleApp\Presentation.ConsoleApp.csproj", "{4D6A54C1-3AD2-408E-9CAD-A0C3DB6F7DAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7BF38980-FF62-4D44-A317-9B202024CC95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.ConsoleApp.Tests", "tests\Presentation.ConsoleApp.Tests\Presentation.ConsoleApp.Tests.csproj", "{289D738C-3EED-4522-9F4F-5526269C3E7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.ConsoleApp.Tests", "tests\Presentation.ConsoleApp.Tests\Presentation.ConsoleApp.Tests.csproj", "{289D738C-3EED-4522-9F4F-5526269C3E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors", "src\Interactors\Interactors.csproj", "{14D92217-4F36-4775-8E06-784ED1807C1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interactors", "src\Interactors\Interactors.csproj", "{14D92217-4F36-4775-8E06-784ED1807C1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors.Tests", "tests\Interactors.Tests\Interactors.Tests.csproj", "{1D86B3D1-87EA-4279-A059-06FE4CB0B4D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{14D92217-4F36-4775-8E06-784ED1807C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14D92217-4F36-4775-8E06-784ED1807C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14D92217-4F36-4775-8E06-784ED1807C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D86B3D1-87EA-4279-A059-06FE4CB0B4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D86B3D1-87EA-4279-A059-06FE4CB0B4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D86B3D1-87EA-4279-A059-06FE4CB0B4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D86B3D1-87EA-4279-A059-06FE4CB0B4D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{4D6A54C1-3AD2-408E-9CAD-A0C3DB6F7DAD} = {3F8A965A-06D5-4541-8D5B-B4148B22D0AE}
 		{289D738C-3EED-4522-9F4F-5526269C3E7D} = {7BF38980-FF62-4D44-A317-9B202024CC95}
 		{14D92217-4F36-4775-8E06-784ED1807C1B} = {3F8A965A-06D5-4541-8D5B-B4148B22D0AE}
+		{1D86B3D1-87EA-4279-A059-06FE4CB0B4D0} = {7BF38980-FF62-4D44-A317-9B202024CC95}
 	EndGlobalSection
 EndGlobal
