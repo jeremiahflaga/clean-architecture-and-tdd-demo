@@ -10,14 +10,14 @@ namespace Presentation.ConsoleApp.Tests
         public void WhenCreateIsCalledTheExcecuteMethodOfInteractorShouldBeCalled()
         {
             // arrange
-            var interactor = new CreateCatInteractorFake();
+            var interactor = new FakeCreateCatInteractor();
             var controller = new CatsController(interactor);
 
             // act
             controller.Create("", "");
 
             // assert
-            Assert.True(interactor.IsExecuteCalled);
+            Assert.True(interactor.TheExecuteMethodWasCalled);
         }
 
         [Fact]
@@ -26,15 +26,15 @@ namespace Presentation.ConsoleApp.Tests
             // arrange
             string name = "Kang Kang";
             string title = "The Great";
-            var interactor = new CreateCatInteractorFake();
+            var interactor = new FakeCreateCatInteractor();
             var controller = new CatsController(interactor);
 
             // act
             controller.Create(name, title);
 
             // assert
-            Assert.Equal(name, interactor.TheGeneratedRequest.Name);
-            Assert.Equal(title, interactor.TheGeneratedRequest.Title);
+            Assert.Equal(name, interactor.TheRequestParameterPassedIntoTheExecuteMethod.Name);
+            Assert.Equal(title, interactor.TheRequestParameterPassedIntoTheExecuteMethod.Title);
         }
     }
 }
