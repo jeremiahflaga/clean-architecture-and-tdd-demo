@@ -4,8 +4,7 @@ using System.Text;
 
 namespace Interactors.CreateCat
 {
-    public interface ICreateCatPresenter
+    public class CreateCatResponse
     {
-        void Execute(CreateCatResponse response);
     }
 }

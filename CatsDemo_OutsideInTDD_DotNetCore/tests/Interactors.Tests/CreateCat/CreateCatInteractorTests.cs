@@ -21,21 +21,21 @@ namespace Interactors.Tests
             Assert.True(presenter.TheExecuteMethodWasCalled);
         }
 
-        [Fact]
-        public void ShouldPassTheCorrectRequestParameterToThePresenter()
-        {
-            // arrange
-            var presenter = new FakeCreateCatPresenter();
-            var request = new CreateCatRequest("Kang Kang", "The Great");
-            var interactor = new CreateCatInteractor(presenter);
+        //[Fact]
+        //public void ShouldReceiveTheCorrectRequestModelAsParameter()
+        //{
+        //    // arrange
+        //    var presenter = new FakeCreateCatPresenter();
+        //    var request = new CreateCatRequest("Kang Kang", "The Great");
+        //    var interactor = new CreateCatInteractor(presenter);
 
-            // act
-            interactor.Execute(request);
+        //    // act
+        //    interactor.Execute(request);
 
-            // assert
+        //    // assert
 
-            Assert.Equal("Kang Kang", presenter.TheRequestPassedAsParameterToTheExecuteMethod.Name);
-            Assert.Equal("The Great", presenter.TheRequestPassedAsParameterToTheExecuteMethod.Title);
-        }
+        //    Assert.Equal("Kang Kang", presenter.TheRequestPassedAsParameterToTheExecuteMethod.Name);
+        //    Assert.Equal("The Great", presenter.TheRequestPassedAsParameterToTheExecuteMethod.Title);
+        //}
     }
 }

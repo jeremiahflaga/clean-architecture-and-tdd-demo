@@ -15,7 +15,7 @@ namespace Interactors.CreateCat
 
         public void Execute(CreateCatRequest request)
         {
-            presenter.Execute(request);
+            presenter.Execute(new CreateCatResponse());
         }
     }
 }

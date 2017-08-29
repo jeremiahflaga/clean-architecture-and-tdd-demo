@@ -7,12 +7,12 @@ namespace Interactors.Tests
     internal class FakeCreateCatPresenter : ICreateCatPresenter
     {
         public bool TheExecuteMethodWasCalled { get; set; } = false;
-        public CreateCatRequest TheRequestPassedAsParameterToTheExecuteMethod { get; set; }
+        public CreateCatResponse TheResponseModelPassedAsParameterToTheExecuteMethod { get; set; }
 
-        public void Execute(CreateCatRequest request)
+        public void Execute(CreateCatResponse response)
         {
             TheExecuteMethodWasCalled = true;
-            TheRequestPassedAsParameterToTheExecuteMethod = request;
+            TheResponseModelPassedAsParameterToTheExecuteMethod = response;
         }
     }
 }
