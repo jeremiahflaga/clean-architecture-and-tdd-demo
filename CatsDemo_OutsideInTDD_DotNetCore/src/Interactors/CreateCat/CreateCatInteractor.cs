@@ -15,7 +15,8 @@ namespace Interactors.CreateCat
 
         public void Execute(CreateCatRequest request)
         {
-            presenter.Execute(new CreateCatResponse());
+            var response = new CreateCatResponse(Guid.NewGuid(), request.Name, request.Title);
+            presenter.Execute(response);
         }
     }
 }
