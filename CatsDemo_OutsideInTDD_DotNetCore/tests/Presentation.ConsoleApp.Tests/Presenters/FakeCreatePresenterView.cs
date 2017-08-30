@@ -5,10 +5,12 @@ namespace Presentation.ConsoleApp.Tests.Presenters
 {
     internal class FakeCreatePresenterView : ICreateCatView
     {
-        public CreateCatViewModel TheViewModelCreatedByThePresenter { get; internal set; }
+        public CreateCatViewModel TheViewModelCreatedByThePresenter { get; private set; }
+        public bool TheRenderMethodWasCalled { get; private set; } = false;
 
         public void Render(CreateCatViewModel viewModel)
         {
+            TheRenderMethodWasCalled = true;
             TheViewModelCreatedByThePresenter = viewModel;
         }
     }

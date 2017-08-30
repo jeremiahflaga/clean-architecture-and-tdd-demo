@@ -16,7 +16,11 @@ namespace Presentation.ConsoleApp.CreateCat
 
         public void Execute(CreateCatResponse response)
         {
-            throw new NotImplementedException();
+            var viewModel = new CreateCatViewModel();
+            viewModel.Id = response.Id;
+            viewModel.PrettyName = string.Format("{0} {1}", response.Name, response.Title);
+
+            view.Render(viewModel);
         }
     }
 }

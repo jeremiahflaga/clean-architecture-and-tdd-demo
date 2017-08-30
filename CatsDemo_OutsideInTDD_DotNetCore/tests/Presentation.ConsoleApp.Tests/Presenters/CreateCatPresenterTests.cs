@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Presentation.ConsoleApp.Tests.Presenters
 {
-    class CreateCatPresenterTests
+    public class CreateCatPresenterTests
     {
         CreateCatPresenter presenter;
         CreateCatResponse response;
@@ -30,6 +30,13 @@ namespace Presentation.ConsoleApp.Tests.Presenters
         {
             // assert
             Assert.Equal("Kang Kang The Great", view.TheViewModelCreatedByThePresenter.PrettyName);
+        }
+
+        [Fact]
+        public void ShouldCallTheRenderMethod()
+        {
+            // assert
+            Assert.True(view.TheRenderMethodWasCalled);
         }
     }
 }

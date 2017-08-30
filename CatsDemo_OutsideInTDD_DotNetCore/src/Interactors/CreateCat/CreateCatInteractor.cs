@@ -7,9 +7,9 @@ namespace Interactors.CreateCat
     public class CreateCatInteractor : ICreateCatInteractor
     {
         private ICreateCatPresenter presenter;
-        private ICatRepository repository;
+        private ICatsRepository repository;
         
-        public CreateCatInteractor(ICreateCatPresenter presenter, ICatRepository repository)
+        public CreateCatInteractor(ICreateCatPresenter presenter, ICatsRepository repository)
         {
             this.presenter = presenter;
             this.repository = repository;

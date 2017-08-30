@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Interactors.CreateCat;
+using Persistence;
+using Presentation.ConsoleApp.CreateCat;
+using Presentation.ConsoleApp.Views;
+using System;
 using System.IO;
 
 namespace Presentation.ConsoleApp
@@ -17,11 +21,16 @@ namespace Presentation.ConsoleApp
                         {
                             string catName = args[2];
                             string catTitle = args[3];
-                            string filename = args[4];
-                            using (StreamWriter writer = File.CreateText(filename))
-                            {
-                                writer.WriteLine(string.Format("{0}, {1}", catName, catTitle));
-                            }
+                            string outputFilename = args[4];
+                            string catsDbFilename = "cats.db";
+
+                            var controller = new CatsController(
+                                new CreateCatInteractor(
+                                    new CreateCatPresenter(
+                                        new CreateCatView(outputFilename)),
+                                    new CatsRepository(catsDbFilename)));
+
+                            controller.Create(catName, catTitle);
                         }
                         break;
                     case "GET":

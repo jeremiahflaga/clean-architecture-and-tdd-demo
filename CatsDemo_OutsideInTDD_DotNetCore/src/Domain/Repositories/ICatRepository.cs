@@ -2,7 +2,7 @@
 
 namespace Domain.Repositories
 {
-    public interface ICatRepository
+    public interface ICatsRepository
     {
         void Save(Cat cat);
     }

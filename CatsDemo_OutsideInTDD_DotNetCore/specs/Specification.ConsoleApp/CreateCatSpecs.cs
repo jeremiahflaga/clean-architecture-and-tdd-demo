@@ -44,7 +44,7 @@ namespace Specification.ConsoleApp
             using (StreamReader reader = File.OpenText(_outputFilename))
             {
                 string line = reader.ReadLine();
-                Assert.Contains(string.Format("{0}, {1}", _name, _title), line);
+                Assert.Contains(string.Format("{0} {1}", _name, _title), line);
             }
         }
     }

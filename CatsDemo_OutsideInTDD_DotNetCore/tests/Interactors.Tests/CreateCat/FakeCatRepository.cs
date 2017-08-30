@@ -4,7 +4,7 @@ using Domain.Repositories;
 
 namespace Interactors.Tests
 {
-    internal class FakeCatRepository : ICatRepository
+    internal class FakeCatRepository : ICatsRepository
     {
         public bool TheSaveMethodWasCalled { get; private set; } = false;
         
