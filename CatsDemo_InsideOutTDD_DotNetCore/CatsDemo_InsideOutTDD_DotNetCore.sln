@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors", "src\Interact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Tests", "tests\Persistence.Tests\Persistence.Tests.csproj", "{8A388D5E-7D91-4CBD-AD14-C88E29494664}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A388D5E-7D91-4CBD-AD14-C88E29494664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A388D5E-7D91-4CBD-AD14-C88E29494664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A388D5E-7D91-4CBD-AD14-C88E29494664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A388D5E-7D91-4CBD-AD14-C88E29494664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{FC16A2B0-7F12-43E4-919C-1E858DC8E025} = {F07AE8E8-530B-4BCF-8E58-B65F7D616BBA}
 		{04B6495F-3AAD-4BF2-B1E8-A6C5FCB11F3B} = {EA42C63E-0226-4710-BFB5-BA6516CBA275}
 		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244} = {EA42C63E-0226-4710-BFB5-BA6516CBA275}
+		{8A388D5E-7D91-4CBD-AD14-C88E29494664} = {F07AE8E8-530B-4BCF-8E58-B65F7D616BBA}
 	EndGlobalSection
 EndGlobal
