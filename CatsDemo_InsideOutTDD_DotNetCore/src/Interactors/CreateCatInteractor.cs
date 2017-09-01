@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using System;
+using Domain;
 using Domain.Repositories;
 
 namespace Interactors
@@ -12,16 +13,18 @@ namespace Interactors
             this.repository = repository;
         }
 
-        public Cat Execute(string name)
+        public CreateCatReponse Execute(CreateCatRequest request)
         {
             var cat = new Cat
             {
-                Name = name
+                Name = request.Name
             };
 
             repository.Save(cat);
 
-            return cat;
+            var response = new CreateCatReponse();
+            response.Name = cat.Name;
+            return response;
         }
     }
 }

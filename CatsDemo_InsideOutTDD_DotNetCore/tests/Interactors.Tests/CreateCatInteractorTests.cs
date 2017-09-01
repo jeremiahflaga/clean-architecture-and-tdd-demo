@@ -9,7 +9,7 @@ namespace Interactors.Tests
     {
         private string name;
         private CreateCatInteractor interactor;
-        private Cat cat;
+        private CreateCatReponse response;
 
         private FakeCatRepository repository;
 
@@ -20,15 +20,19 @@ namespace Interactors.Tests
             repository = new FakeCatRepository();
             interactor = new CreateCatInteractor(repository);
 
+            var request = new CreateCatRequest();
+            request.Name = name;
+
             // act
-            cat = interactor.Execute(name);
+            response = interactor.Execute(request);
         }
 
         [Fact]
-        public void ItShouldCreateANewCatWithTheSameNameWeSpecified()
+        public void ItShouldReternTheCorrectResponse()
         {
             // assert
-            Assert.Equal(name, cat.Name);
+            Assert.NotNull(response);
+            Assert.Equal(name, response.Name);
         }
 
         [Fact]
