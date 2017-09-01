@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F07AE8E8-530B-4BCF-8E58-B65F7D616BBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors.Tests", "tests\Interactors.Tests\Interactors.Tests.csproj", "{FC16A2B0-7F12-43E4-919C-1E858DC8E025}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC16A2B0-7F12-43E4-919C-1E858DC8E025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC16A2B0-7F12-43E4-919C-1E858DC8E025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC16A2B0-7F12-43E4-919C-1E858DC8E025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC16A2B0-7F12-43E4-919C-1E858DC8E025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC16A2B0-7F12-43E4-919C-1E858DC8E025} = {F07AE8E8-530B-4BCF-8E58-B65F7D616BBA}
+	EndGlobalSection
+EndGlobal
