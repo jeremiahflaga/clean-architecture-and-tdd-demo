@@ -3,9 +3,9 @@ using Domain;
 using Domain.Repositories;
 using System.IO;
 
-namespace Persistence.Tests
+namespace Persistence
 {
-    internal class CatsRepository : ICatsRepository
+    public class CatsRepository : ICatsRepository
     {
         private string dbFileName;
         
