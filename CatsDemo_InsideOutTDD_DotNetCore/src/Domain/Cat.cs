@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Interactors.Tests
+﻿namespace Domain
 {
     public class Cat
     {

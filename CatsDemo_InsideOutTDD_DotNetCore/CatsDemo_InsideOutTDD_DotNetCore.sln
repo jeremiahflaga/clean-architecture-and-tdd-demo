@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F07AE8E8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors.Tests", "tests\Interactors.Tests\Interactors.Tests.csproj", "{FC16A2B0-7F12-43E4-919C-1E858DC8E025}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EA42C63E-0226-4710-BFB5-BA6516CBA275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors", "src\Interactors\Interactors.csproj", "{04B6495F-3AAD-4BF2-B1E8-A6C5FCB11F3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +23,21 @@ Global
 		{FC16A2B0-7F12-43E4-919C-1E858DC8E025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC16A2B0-7F12-43E4-919C-1E858DC8E025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC16A2B0-7F12-43E4-919C-1E858DC8E025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B6495F-3AAD-4BF2-B1E8-A6C5FCB11F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B6495F-3AAD-4BF2-B1E8-A6C5FCB11F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B6495F-3AAD-4BF2-B1E8-A6C5FCB11F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B6495F-3AAD-4BF2-B1E8-A6C5FCB11F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FC16A2B0-7F12-43E4-919C-1E858DC8E025} = {F07AE8E8-530B-4BCF-8E58-B65F7D616BBA}
+		{04B6495F-3AAD-4BF2-B1E8-A6C5FCB11F3B} = {EA42C63E-0226-4710-BFB5-BA6516CBA275}
+		{F08C280B-5D1A-4CF0-8672-B50BEC5DB244} = {EA42C63E-0226-4710-BFB5-BA6516CBA275}
 	EndGlobalSection
 EndGlobal
