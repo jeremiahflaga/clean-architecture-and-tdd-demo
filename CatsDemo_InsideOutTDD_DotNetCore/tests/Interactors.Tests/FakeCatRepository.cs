@@ -6,16 +6,16 @@ namespace Interactors.Tests
 {
     internal class FakeCatRepository : ICatsRepository
     {
-        public bool TheSaveMethodShouldBeCalled { get; private set; }
+        public bool TheSaveMethodWasCalled { get; private set; }
 
         public FakeCatRepository()
         {
-            TheSaveMethodShouldBeCalled = false;
+            TheSaveMethodWasCalled = false;
         }
 
         public void Save(Cat cat)
         {
-            TheSaveMethodShouldBeCalled = true;
+            TheSaveMethodWasCalled = true;
         }
     }
 }
