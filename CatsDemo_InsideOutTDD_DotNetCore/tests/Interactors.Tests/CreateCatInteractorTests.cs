@@ -28,7 +28,7 @@ namespace Interactors.Tests
         }
 
         [Fact]
-        public void ItShouldReternTheCorrectResponse()
+        public void ShouldReturnTheCorrectResponse()
         {
             // assert
             Assert.NotNull(response);
@@ -36,10 +36,10 @@ namespace Interactors.Tests
         }
 
         [Fact]
-        public void ItShouldSaveTheNewCatToTheDatabase()
+        public void ShouldSaveTheNewCatToTheDatabase()
         {
             // assert
-            Assert.True(repository.TheSaveMethodShouldBeCalled);
+            Assert.True(repository.TheSaveMethodWasCalled);
         }
     }
 }
