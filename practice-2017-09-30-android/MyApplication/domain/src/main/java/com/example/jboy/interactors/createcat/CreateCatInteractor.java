@@ -25,7 +25,7 @@ class CreateCatInteractor {
         repository.save(cat);
 
         CreateCatResponse response = new CreateCatResponse();
-        response.id = UUID.randomUUID();
+        response.id = cat.getId();
         response.name = request.name;
         response.title = request.title;
 
