@@ -9,9 +9,4 @@ import static org.junit.Assert.*;
  */
 public class MyClassTest {
 
-    @Test
-    public void test_that_tests_are_working() {
-        assertEquals(4, 2 + 2);
-    }
-
 }
