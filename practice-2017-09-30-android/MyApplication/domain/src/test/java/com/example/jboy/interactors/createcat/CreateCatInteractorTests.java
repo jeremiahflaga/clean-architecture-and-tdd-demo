@@ -1,5 +1,6 @@
 package com.example.jboy.interactors.createcat;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,18 +12,27 @@ import static org.junit.Assert.*;
 public class CreateCatInteractorTests {
 
     FakeCatsRepository repository = new FakeCatsRepository();
+    CreateCatInteractor interactor;
+    CreateCatRequest request;
+    CreateCatResponse response;
 
-    @Test
-    public void shouldReturnCorrectResponse() {
+    @Before
+    public void setup() {
+
         // arrange
-        CreateCatInteractor interactor = new CreateCatInteractor(repository);
-        CreateCatRequest request = new CreateCatRequest();
+        interactor = new CreateCatInteractor(repository);
+
+        request = new CreateCatRequest();
         request.name = "Kang Kang";
         request.title = "The Great";
 
         // act
-        CreateCatResponse response = interactor.execute(request);
+        response = interactor.execute(request);
 
+    }
+
+    @Test
+    public void shouldReturnCorrectResponse() {
         // assert
         assertNotNull(response);
         assertNotNull(response.id);
@@ -32,15 +42,6 @@ public class CreateCatInteractorTests {
 
     @Test
     public void shouldSaveDataToTheDatabase() {
-        // arrange
-        CreateCatInteractor interactor = new CreateCatInteractor(repository);
-        CreateCatRequest request = new CreateCatRequest();
-        request.name = "Kang Kang";
-        request.title = "The Great";
-
-        // act
-        CreateCatResponse response = interactor.execute(request);
-
         // assert
         assertTrue(repository.theSaveMethodWasCalled());
         assertNotNull(repository.theCatEntityThatWasReceivedByTheSaveMethod());
