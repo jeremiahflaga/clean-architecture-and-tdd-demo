@@ -11,18 +11,34 @@ import static org.junit.Assert.*;
 
 public class CreateCatInteractorTests {
 
-    @Test
-    public void shouldReturnCorrectResponse() {
-        CreateCatInteractor interactor = new CreateCatInteractor();
-        CreateCatRequest request = new CreateCatRequest();
+    CatsRepository repository;
+    CreateCatRequest request;
+    CreateCatInteractor interactor;
+
+    CreateCatResponse response;
+
+    @Before
+    public void setup() {
+
+        // arrange
+        repository = new CatsRepository();
+        interactor = new CreateCatInteractor(repository);
+        request = new CreateCatRequest();
         request.name = "Kang Kang";
         request.title = "The Great";
 
-        CreateCatResponse response = interactor.execute(request);
+        // act
+        response = interactor.execute(request);
+    }
 
+    @Test
+    public void shouldReturnCorrectResponse() {
         assertEquals("Kang Kang \"The Great\"", response.grandioseName);
     }
 
-
+    @Test
+    public void shouldSaveDataToDatabase() {
+        assertTrue(repository.theSaveMethodWasCalled());
+    }
 
 }
