@@ -16,8 +16,6 @@ public class CreateCatInteractorTests {
     CreateCatRequest request;
     CreateCatInteractor interactor;
 
-    CreateCatResponse response;
-
     @Before
     public void setup() {
         // arrange
@@ -29,15 +27,13 @@ public class CreateCatInteractorTests {
         request.title = "The Great";
 
         // act
-        response = interactor.execute(request);
+        interactor.execute(request);
     }
 
     @Test
     public void shouldPassCorrectResponseToPresenter() {
-        CatCreatedViewModel viewModel = presenter.present(response);
-        
-        assertEquals("Kang Kang \"The Great\"", viewModel.grandioseName);
-        assertEquals(repository.theCatObjectThatWasPassedToTheSaveMethod().getId(), response.id);
+        assertEquals("Kang Kang \"The Great\"", presenter.theResponseModelReceivedByPresentMethod().grandioseName);
+        assertEquals(repository.theCatObjectThatWasPassedToTheSaveMethod().getId(), presenter.theResponseModelReceivedByPresentMethod().id);
     }
 
     @Test

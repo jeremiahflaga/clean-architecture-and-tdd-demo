@@ -20,7 +20,7 @@ public class CreateCatInteractor {
         this.presenter = presenter;
     }
 
-    public CreateCatResponse execute(CreateCatRequest request) {
+    public void execute(CreateCatRequest request) {
         Cat cat = new Cat(UUID.randomUUID());
         cat.setName(request.name);
         cat.setTitle(request.title);
@@ -32,7 +32,5 @@ public class CreateCatInteractor {
         response.grandioseName = String.format("%s \"%s\"", request.name, request.title);
 
         presenter.present(response);
-
-        return response;
     }
 }

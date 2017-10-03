@@ -5,10 +5,13 @@ package com.example.jboy.interactors.createcat;
  */
 
 class CatCreatedPresenter {
-    public CatCreatedViewModel present(CreateCatResponse response) {
+    private CreateCatResponse responseModelReceived;
 
-        CatCreatedViewModel viewModel = new CatCreatedViewModel();
-        viewModel.grandioseName = response.grandioseName;
-        return viewModel;
+    public void present(CreateCatResponse response) {
+        this.responseModelReceived = response;
+    }
+
+    public CreateCatResponse theResponseModelReceivedByPresentMethod() {
+        return this.responseModelReceived;
     }
 }
