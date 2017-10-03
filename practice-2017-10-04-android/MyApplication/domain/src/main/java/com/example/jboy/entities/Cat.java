@@ -1,4 +1,4 @@
-package com.example.jboy.interactors.createcat;
+package com.example.jboy.entities;
 
 import java.util.UUID;
 
@@ -6,7 +6,7 @@ import java.util.UUID;
  * Created by Dev on 04/10/2017.
  */
 
-class Cat {
+public class Cat {
     private String name;
     private String title;
     private UUID id;

@@ -1,5 +1,8 @@
 package com.example.jboy.interactors.createcat;
 
+import com.example.jboy.entities.Cat;
+import com.example.jboy.repositories.CatsRepository;
+
 import java.util.UUID;
 
 /**

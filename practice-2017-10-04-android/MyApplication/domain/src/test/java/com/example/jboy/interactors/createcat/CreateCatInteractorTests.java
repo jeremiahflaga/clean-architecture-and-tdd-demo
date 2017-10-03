@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 public class CreateCatInteractorTests {
 
-    CatsRepository repository;
+    FakeCatsRepository repository;
     CreateCatRequest request;
     CreateCatInteractor interactor;
 
@@ -21,7 +21,7 @@ public class CreateCatInteractorTests {
     public void setup() {
 
         // arrange
-        repository = new CatsRepository();
+        repository = new FakeCatsRepository();
         interactor = new CreateCatInteractor(repository);
         request = new CreateCatRequest();
         request.name = "Kang Kang";
