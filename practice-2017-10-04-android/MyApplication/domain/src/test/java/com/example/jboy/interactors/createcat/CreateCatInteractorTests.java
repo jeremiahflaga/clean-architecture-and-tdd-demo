@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 
 public class CreateCatInteractorTests {
 
+    CatCreatedPresenter presenter;
     FakeCatsRepository repository;
     CreateCatRequest request;
     CreateCatInteractor interactor;
@@ -19,10 +20,10 @@ public class CreateCatInteractorTests {
 
     @Before
     public void setup() {
-
         // arrange
+        presenter = new CatCreatedPresenter();
         repository = new FakeCatsRepository();
-        interactor = new CreateCatInteractor(repository);
+        interactor = new CreateCatInteractor(repository, presenter);
         request = new CreateCatRequest();
         request.name = "Kang Kang";
         request.title = "The Great";
@@ -32,8 +33,10 @@ public class CreateCatInteractorTests {
     }
 
     @Test
-    public void shouldReturnCorrectResponse() {
-        assertEquals("Kang Kang \"The Great\"", response.grandioseName);
+    public void shouldPassCorrectResponseToPresenter() {
+        CatCreatedViewModel viewModel = presenter.present(response);
+        
+        assertEquals("Kang Kang \"The Great\"", viewModel.grandioseName);
         assertEquals(repository.theCatObjectThatWasPassedToTheSaveMethod().getId(), response.id);
     }
 

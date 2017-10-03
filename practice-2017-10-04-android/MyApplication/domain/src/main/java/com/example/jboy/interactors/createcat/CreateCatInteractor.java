@@ -13,9 +13,11 @@ public class CreateCatInteractor {
 
 
     private final CatsRepository repository;
+    private final CatCreatedPresenter presenter;
 
-    public CreateCatInteractor(CatsRepository repository) {
+    public CreateCatInteractor(CatsRepository repository, CatCreatedPresenter presenter) {
         this.repository = repository;
+        this.presenter = presenter;
     }
 
     public CreateCatResponse execute(CreateCatRequest request) {
@@ -28,6 +30,8 @@ public class CreateCatInteractor {
         CreateCatResponse response = new CreateCatResponse();
         response.id = cat.getId();
         response.grandioseName = String.format("%s \"%s\"", request.name, request.title);
+
+        presenter.present(response);
 
         return response;
     }
