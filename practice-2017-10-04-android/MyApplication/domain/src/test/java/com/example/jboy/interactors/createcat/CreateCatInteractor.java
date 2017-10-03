@@ -1,5 +1,7 @@
 package com.example.jboy.interactors.createcat;
 
+import java.util.UUID;
+
 /**
  * Created by Dev on 04/10/2017.
  */
@@ -14,10 +16,15 @@ public class CreateCatInteractor {
     }
 
     public CreateCatResponse execute(CreateCatRequest request) {
-        CreateCatResponse response = new CreateCatResponse();
-        response.grandioseName = String.format("%s \"%s\"", request.name, request.title);
+        Cat cat = new Cat(UUID.randomUUID());
+        cat.setName(request.name);
+        cat.setTitle(request.title);
 
-        repository.save();
+        repository.save(cat);
+
+        CreateCatResponse response = new CreateCatResponse();
+        response.id = cat.getId();
+        response.grandioseName = String.format("%s \"%s\"", request.name, request.title);
 
         return response;
     }

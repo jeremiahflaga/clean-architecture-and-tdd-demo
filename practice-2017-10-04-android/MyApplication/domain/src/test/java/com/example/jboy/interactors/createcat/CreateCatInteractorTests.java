@@ -34,6 +34,7 @@ public class CreateCatInteractorTests {
     @Test
     public void shouldReturnCorrectResponse() {
         assertEquals("Kang Kang \"The Great\"", response.grandioseName);
+        assertEquals(repository.theCatObjectThatWasPassedToTheSaveMethod().getId(), response.id);
     }
 
     @Test
@@ -41,4 +42,11 @@ public class CreateCatInteractorTests {
         assertTrue(repository.theSaveMethodWasCalled());
     }
 
+    @Test
+    public void shouldSaveCorrectDataToDatabase() {
+        assertNotNull(repository.theCatObjectThatWasPassedToTheSaveMethod());
+        assertNotNull(repository.theCatObjectThatWasPassedToTheSaveMethod().getId());
+        assertEquals("Kang Kang", repository.theCatObjectThatWasPassedToTheSaveMethod().getName());
+        assertEquals("The Great", repository.theCatObjectThatWasPassedToTheSaveMethod().getTitle());
+    }
 }

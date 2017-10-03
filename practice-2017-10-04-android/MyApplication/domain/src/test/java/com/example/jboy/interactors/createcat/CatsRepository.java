@@ -7,12 +7,18 @@ package com.example.jboy.interactors.createcat;
 class CatsRepository {
 
     private boolean saveMethodCalled = false;
+    private Cat catObjectPassedToSaveMethod;
 
     public boolean theSaveMethodWasCalled() {
         return this.saveMethodCalled;
     }
 
-    public void save() {
+    public void save(Cat cat) {
         this.saveMethodCalled = true;
+        this.catObjectPassedToSaveMethod = cat;
+    }
+
+    public Cat theCatObjectThatWasPassedToTheSaveMethod() {
+        return this.catObjectPassedToSaveMethod;
     }
 }
