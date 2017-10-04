@@ -2,7 +2,7 @@
 
 namespace Interactors
 {
-    public class CreateCatReponse
+    public class CreateCatResponse
     {
         public string Name { get; set; }
     }

@@ -13,7 +13,7 @@ namespace Interactors
             this.repository = repository;
         }
 
-        public CreateCatReponse Execute(CreateCatRequest request)
+        public CreateCatResponse Execute(CreateCatRequest request)
         {
             var cat = new Cat
             {
@@ -22,7 +22,7 @@ namespace Interactors
 
             repository.Save(cat);
 
-            var response = new CreateCatReponse();
+            var response = new CreateCatResponse();
             response.Name = cat.Name;
             return response;
         }

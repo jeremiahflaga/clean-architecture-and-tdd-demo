@@ -9,7 +9,7 @@ namespace Interactors.Tests
     {
         private string name;
         private CreateCatInteractor interactor;
-        private CreateCatReponse response;
+        private CreateCatResponse response;
 
         private FakeCatRepository repository;
 
