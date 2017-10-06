@@ -1,7 +1,9 @@
 package com.example.interactors.createcat;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+import org.omg.CORBA.portable.ResponseHandler;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -13,33 +15,37 @@ import static org.junit.Assert.assertTrue;
 public class CreateCatInteractorTests {
 
     FakeCatsRepository repository = new FakeCatsRepository();
-    
-    @Test
-    public void shouldPassCorrectResponseToPresenter() {
-        FakeCatCreatedPresenter presenter = new FakeCatCreatedPresenter();
-        CreateCatInteractor interactor = new CreateCatInteractor(presenter, repository);
-        CreateCatRequest request = new CreateCatRequest();
+    FakeCatCreatedPresenter presenter = new FakeCatCreatedPresenter();
+    CreateCatInteractor interactor;
+    CreateCatRequest request;
+
+    @Before
+    public void setup() {
+        interactor = new CreateCatInteractor(presenter, repository);
+        request = new CreateCatRequest();
         request.name = "Kang Kang";
         request.title = "The Great";
 
         interactor.execute(request);
+    }
 
+    @Test
+    public void shouldPassCorrectResponseToPresenter() {
         assertEquals(request.name, presenter.theReponseModelReceived().name);
         assertEquals(request.title, presenter.theReponseModelReceived().title);
         assertNotNull(presenter.theReponseModelReceived().id);
+        assertEquals(repository.theCatEntityReceivedByTheSaveMethod().getId(), presenter.theReponseModelReceived().id);
     }
 
     @Test
     public void shouldSaveNewCatToDatabase() {
-
-        FakeCatCreatedPresenter presenter = new FakeCatCreatedPresenter();
-        CreateCatInteractor interactor = new CreateCatInteractor(presenter, repository);
-        CreateCatRequest request = new CreateCatRequest();
-        request.name = "Kang Kang";
-        request.title = "The Great";
-
-        interactor.execute(request);
-
         assertTrue(repository.theSaveMethodWasCalled());
+    }
+
+    @Test
+    public void shouldSaveCorrectDataToDatabase() {
+        assertNotNull(repository.theCatEntityReceivedByTheSaveMethod().getId());
+        assertEquals(request.name, repository.theCatEntityReceivedByTheSaveMethod().getName());
+        assertEquals(request.title, repository.theCatEntityReceivedByTheSaveMethod().getTitle());
     }
 }

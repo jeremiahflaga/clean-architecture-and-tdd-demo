@@ -20,11 +20,13 @@ public class CreateCatInteractor {
     }
 
     public void execute(CreateCatRequest request) {
-
-        repository.save(new Cat());
+        Cat cat = new Cat(UUID.randomUUID());
+        cat.setName(request.name);
+        cat.setTitle(request.title);
+        repository.save(cat);
 
         CreateCatResponse response = new CreateCatResponse();
-        response.id = UUID.randomUUID();
+        response.id = cat.getId();
         response.name = request.name;
         response.title = request.title;
 
