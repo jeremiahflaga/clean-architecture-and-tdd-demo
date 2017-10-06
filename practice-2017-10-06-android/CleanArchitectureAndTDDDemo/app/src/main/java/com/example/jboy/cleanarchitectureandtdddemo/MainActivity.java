@@ -10,8 +10,6 @@ import com.example.presentation.createcat.CatCreatedPresenterImpl;
 import com.example.presentation.createcat.CatCreatedView;
 import com.example.presentation.createcat.CatCreatedViewModel;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity implements CatCreatedView {
 
     TextView nameTextView;
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements CatCreatedView {
 
         CatCreatedPresenter presenter = new CatCreatedPresenterImpl(this);
         CreateCatInteractor interactor = new CreateCatInteractor(presenter);
-        interactor.execute();
+        interactor.execute(request);
     }
 
     @Override

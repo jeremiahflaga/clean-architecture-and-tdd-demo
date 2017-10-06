@@ -1,5 +1,7 @@
 package com.example.interactors.createcat;
 
+import java.util.UUID;
+
 /**
  * Created by MyndDev on 06/10/2017.
  */
@@ -12,9 +14,12 @@ public class CreateCatInteractor {
         this.presenter = presenter;
     }
 
-    public void execute() {
+    public void execute(CreateCatRequest request) {
+
         CreateCatResponse response = new CreateCatResponse();
-        response.name = "Kang Kang 'The Great'";
+        response.id = UUID.randomUUID();
+        response.name = request.name;
+        response.title = request.title;
 
         presenter.present(response);
     }

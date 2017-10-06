@@ -18,7 +18,7 @@ public class CatCreatedPresenterImpl implements CatCreatedPresenter {
     @Override
     public void present(CreateCatResponse response) {
         CatCreatedViewModel viewModel = new CatCreatedViewModel();
-        viewModel.grandioseName = "Kang Kang 'The Great'";
+        viewModel.grandioseName = String.format("%s: %s '%s'", response.id, response.name, response.title);
 
         view.showNewlyCreatedCat(viewModel);
     }
