@@ -29,4 +29,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(path: ':core')
     compile project(path: ':presentation')
+    compile project(path: ':data')
 }
