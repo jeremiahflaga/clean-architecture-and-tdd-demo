@@ -4,7 +4,7 @@ package com.example.presentation.createcat;
  * Created by MyndDev on 06/10/2017.
  */
 
-class CatCreatedView {
+class FakeCatCreatedView implements CatCreatedView {
     private CatCreatedViewModel viewModelReceived;
 
     public CatCreatedViewModel theViewModelReceived() {

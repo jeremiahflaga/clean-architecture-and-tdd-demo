@@ -1,12 +1,9 @@
 package com.example.presentation.createcat;
 
-import com.example.interactors.createcat.CatCreatedPresenter;
 import com.example.interactors.createcat.CreateCatResponse;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by MyndDev on 06/10/2017.
@@ -14,7 +11,7 @@ import static org.junit.Assert.*;
 public class CatCreatedPresenterImplTest {
     @Test
     public void passesCorrectViewModelToView() throws Exception {
-        CatCreatedView view = new CatCreatedView();
+        FakeCatCreatedView view = new FakeCatCreatedView();
         CatCreatedPresenterImpl presenter = new CatCreatedPresenterImpl(view);
 
         presenter.present(new CreateCatResponse());
