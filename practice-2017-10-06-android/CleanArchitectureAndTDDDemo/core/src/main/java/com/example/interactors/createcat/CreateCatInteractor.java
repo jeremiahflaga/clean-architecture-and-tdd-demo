@@ -1,5 +1,8 @@
 package com.example.interactors.createcat;
 
+import com.example.entities.Cat;
+import com.example.repositories.CatsRepository;
+
 import java.util.UUID;
 
 /**
@@ -9,12 +12,16 @@ import java.util.UUID;
 public class CreateCatInteractor {
 
     CatCreatedPresenter presenter;
+    private final CatsRepository repository;
 
-    public CreateCatInteractor(CatCreatedPresenter presenter) {
+    public CreateCatInteractor(CatCreatedPresenter presenter, CatsRepository repository) {
         this.presenter = presenter;
+        this.repository = repository;
     }
 
     public void execute(CreateCatRequest request) {
+
+        repository.save(new Cat());
 
         CreateCatResponse response = new CreateCatResponse();
         response.id = UUID.randomUUID();
