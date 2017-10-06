@@ -11,10 +11,9 @@ import com.example.data.CatsRepositoryImpl;
 import com.example.interactors.createcat.CatCreatedPresenter;
 import com.example.interactors.createcat.CreateCatInteractor;
 import com.example.interactors.createcat.CreateCatRequest;
-import com.example.presentation.createcat.CatCreatedPresenterImpl;
-import com.example.presentation.createcat.CatCreatedView;
-import com.example.presentation.createcat.CatCreatedViewModel;
-import com.example.repositories.CatsRepository;
+import com.example.jboy.cleanarchitectureandtdddemo.presenters.createcat.CatCreatedPresenterImpl;
+import com.example.jboy.cleanarchitectureandtdddemo.presenters.createcat.CatCreatedView;
+import com.example.jboy.cleanarchitectureandtdddemo.presenters.createcat.CatCreatedViewModel;
 
 public class MainActivity extends AppCompatActivity implements CatCreatedView {
 
