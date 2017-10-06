@@ -10,7 +10,7 @@ public class CreateCatInteractorTests {
 
     @Test
     public void shouldPassCorrectResponseToPresenter() {
-        CatCreatedPresenter presenter = new CatCreatedPresenter();
+        FakeCatCreatedPresenter presenter = new FakeCatCreatedPresenter();
         CreateCatInteractor interactor = new CreateCatInteractor(presenter);
 
         interactor.execute();
