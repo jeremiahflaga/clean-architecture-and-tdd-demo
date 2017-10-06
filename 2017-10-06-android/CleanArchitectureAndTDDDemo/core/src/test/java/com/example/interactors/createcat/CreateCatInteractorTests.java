@@ -9,7 +9,9 @@ import org.junit.Test;
 public class CreateCatInteractorTests {
 
     @Test
-    public void test() {
-        Assert.assertEquals(4, 2 + 2);
+    public void shouldReturnCorrectResponse() {
+        CreateCatInteractor interactor = new CreateCatInteractor();
+        String response = interactor.execute();
+        Assert.assertEquals("Kang Kang 'The Great'", response);
     }
 }
