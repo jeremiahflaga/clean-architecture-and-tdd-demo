@@ -6,8 +6,16 @@ package com.example.interactors.createcat;
 
 class CreateCatInteractor {
 
-    public String execute() {
+    CatCreatedPresenter presenter;
 
-        return "Kang Kang 'The Great'";
+    public CreateCatInteractor(CatCreatedPresenter presenter) {
+        this.presenter = presenter;
+    }
+
+    public void execute() {
+        CreateCatResponse response = new CreateCatResponse();
+        response.name = "Kang Kang 'The Great'";
+
+        presenter.present(response);
     }
 }

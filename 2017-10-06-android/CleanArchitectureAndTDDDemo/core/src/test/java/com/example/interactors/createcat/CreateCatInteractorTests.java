@@ -9,9 +9,12 @@ import org.junit.Test;
 public class CreateCatInteractorTests {
 
     @Test
-    public void shouldReturnCorrectResponse() {
-        CreateCatInteractor interactor = new CreateCatInteractor();
-        String response = interactor.execute();
-        Assert.assertEquals("Kang Kang 'The Great'", response);
+    public void shouldPassCorrectResponseToPresenter() {
+        CatCreatedPresenter presenter = new CatCreatedPresenter();
+        CreateCatInteractor interactor = new CreateCatInteractor(presenter);
+
+        interactor.execute();
+
+        Assert.assertEquals("Kang Kang 'The Great'", presenter.theReponseModelReceived().name);
     }
 }
