@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monolith", "Monolith\Monolith.csproj", "{14B361D7-A843-455A-BFE2-AC0448FB670A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layered", "Layered\Layered.csproj", "{002906FD-9A3B-4EC2-8C53-693E25F8690E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layered", "Layered\Layered.csproj", "{002906FD-9A3B-4EC2-8C53-693E25F8690E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoLayers", "TwoLayers\TwoLayers.csproj", "{1DDD3209-181E-4505-8881-F9AF11FC56E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{002906FD-9A3B-4EC2-8C53-693E25F8690E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{002906FD-9A3B-4EC2-8C53-693E25F8690E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{002906FD-9A3B-4EC2-8C53-693E25F8690E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DDD3209-181E-4505-8881-F9AF11FC56E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DDD3209-181E-4505-8881-F9AF11FC56E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DDD3209-181E-4505-8881-F9AF11FC56E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DDD3209-181E-4505-8881-F9AF11FC56E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
