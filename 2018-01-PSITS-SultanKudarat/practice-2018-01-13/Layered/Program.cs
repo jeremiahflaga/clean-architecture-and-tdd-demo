@@ -23,26 +23,16 @@ namespace Layered
             string title = Console.ReadLine();
 
             CreateCatService createCatService = new CreateCatService();
-            Cat catFromDb;
-            try
-            {
-                catFromDb = createCatService.Execute(name, title);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("ERROR: We cannot make the Devil as our new king");
-                return;
-            }
-
+            Cat cat = createCatService.Execute(name, title);
+           
             // show cat to the user
             Console.Write("Hail the new King: ");
-            string grandioseName = string.Format("{0}, \"{1}\"", catFromDb.Name, catFromDb.Title);
-            if (grandioseName.Length <= 10)
+            if (cat.IsImportant)
                 Console.ForegroundColor = ConsoleColor.Red;
             else
                 Console.ForegroundColor = ConsoleColor.Blue;
 
-            Console.WriteLine(grandioseName);
+            Console.WriteLine(cat.GrandioseName);
             Console.ReadLine();
         }
     }
