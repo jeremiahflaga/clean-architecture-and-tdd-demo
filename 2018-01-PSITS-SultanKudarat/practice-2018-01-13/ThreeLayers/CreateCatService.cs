@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TwoLayers
+namespace ThreeLayers
 {
     class CreateCatService
     {
@@ -10,19 +10,9 @@ namespace TwoLayers
 
         public CreateCatResponse Execute(string name, string title)
         {
-            // save new cat to the database
-            Guid newCatId = Guid.NewGuid();
-            Cat newCat = new Cat(newCatId)
-            {
-                Name = name,
-                Title = title
-            };
-            catsDb.Add(newCat);
-
-            // get cat from database
-            Cat catFromDb = (from cat in catsDb
-                             where cat.Id == newCatId
-                             select cat).Single();
+            CatsRepository catsRepository = new CatsRepository();            
+            catsRepository.Add(name, title);
+            Cat catFromDb = catsRepository.Get(name);
 
             return MakeResponse(catFromDb);
         }

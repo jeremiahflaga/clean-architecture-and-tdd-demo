@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace Monolith
+namespace ThreeLayers
 {
     class Program
     {
@@ -11,9 +10,7 @@ namespace Monolith
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to King Cat Creator App!\n");
-
             CreateKingCat();
-
         }
 
         private static void CreateKingCat()
@@ -23,30 +20,19 @@ namespace Monolith
             string name = Console.ReadLine();
             Console.WriteLine("Please enter title of cat: ");
             string title = Console.ReadLine();
-            
-            // save new cat to the database
-            Guid newCatId = Guid.NewGuid();
-            Cat newCat = new Cat(newCatId)
-            {
-                Name = name,
-                Title = title
-            };
-            catsDb.Add(newCat);
 
-            // get cat from database
-            Cat catFromDb = (from cat in catsDb
-                             where cat.Id == newCatId
-                             select cat).Single();
+            // process input
+            CreateCatService service = new CreateCatService();
+            CreateCatResponse response = service.Execute(name, title);
 
             // show cat to the user
             Console.Write("Hail the new King: ");
-            string grandioseName = string.Format("{0}, \"{1}\"", catFromDb.Name, catFromDb.Title);
-            if (grandioseName.Length <= 10)
+            if (response.IsImportant)
                 Console.ForegroundColor = ConsoleColor.Red;
             else
                 Console.ForegroundColor = ConsoleColor.Blue;
-            
-            Console.WriteLine(grandioseName);
+
+            Console.WriteLine(response.GrandioseName);
             Console.ReadLine();
         }
     }

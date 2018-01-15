@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
-namespace Layered
+namespace ThreeLayers
 {
     public class CatsRepository
     {
@@ -24,8 +23,8 @@ namespace Layered
         public Cat Get(string name)
         {
             return (from cat in catsDb
-                             where cat.Name == name
-                             select cat).Single();
+                    where cat.Name == name
+                    select cat).Single();
         }
     }
 }
