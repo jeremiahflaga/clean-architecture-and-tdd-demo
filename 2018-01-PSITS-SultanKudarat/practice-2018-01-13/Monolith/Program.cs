@@ -23,14 +23,7 @@ namespace Monolith
             string name = Console.ReadLine();
             Console.WriteLine("Please enter title of cat: ");
             string title = Console.ReadLine();
-
-            // validate user input
-            if (name == "Devil")
-            {
-                Console.WriteLine("ERROR: We cannot make the Devil as our new king");
-                return;
-            }
-
+            
             // save new cat to the database
             Guid newCatId = Guid.NewGuid();
             Cat newCat = new Cat(newCatId)
