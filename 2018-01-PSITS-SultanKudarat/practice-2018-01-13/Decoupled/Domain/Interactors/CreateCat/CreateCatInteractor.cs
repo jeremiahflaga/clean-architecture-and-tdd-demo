@@ -1,16 +1,25 @@
-﻿using System;
+﻿using Decoupled.Data;
+using Decoupled.Domain.Entities;
+using Decoupled.Domain.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ThreeLayers
+namespace Decoupled.Domain
 {
-    class CreateCatService
+    class CreateCatInteractor
     {
+        private ICatsRepository _respository;
+
+        public CreateCatInteractor(ICatsRepository repository)
+        {
+            _respository = repository;
+        }
+
         public CreateCatResponse Execute(string name, string title)
         {
-            CatsRepository catsRepository = new CatsRepository();
-            catsRepository.Add(name, title);
-            Cat catFromDb = catsRepository.Get(name);
+            _respository.Add(name, title);
+            Cat catFromDb = _respository.Get(name);
 
             return MakeResponse(catFromDb);
         }
