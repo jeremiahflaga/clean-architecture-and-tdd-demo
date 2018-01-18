@@ -2,7 +2,7 @@
 {
     public class CreateCatResponse
     {
-        public string GrandioseName;
-        public bool IsImportant;
+        public string grandioseName;
+        public bool isCatImportant;
     }
 }

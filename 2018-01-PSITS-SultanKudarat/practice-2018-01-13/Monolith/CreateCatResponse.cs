@@ -1,4 +1,4 @@
-﻿namespace TwoLayers
+﻿namespace Monolith
 {
     public class CreateCatResponse
     {

@@ -5,15 +5,16 @@ namespace TwoLayers
 {
     class Program
     {
-        private static IList<Cat> catsDb = new List<Cat>();
-
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to King Cat Creator App!\n");
-            CreateKingCat();
+
+            CreateCatRequest request = GetRequestFromUser();
+            CreateCatResponse response = ProcessRequest(request);
+            ShowNewKingToUser(response);
         }
 
-        private static void CreateKingCat()
+        private static CreateCatRequest GetRequestFromUser()
         {
             // get input from user
             Console.WriteLine("Please enter name of cat: ");
@@ -21,19 +22,32 @@ namespace TwoLayers
             Console.WriteLine("Please enter title of cat: ");
             string title = Console.ReadLine();
 
+            return new CreateCatRequest
+            {
+                name = name,
+                title = title
+            };
+        }
+
+        private static CreateCatResponse ProcessRequest(CreateCatRequest request)
+        {
             // process input
             CreateCatService service = new CreateCatService();
-            CreateCatResponse response = service.Execute(name, title);
-            
-            // show cat to the user
-            Console.Write("Hail the new King: ");
-            if (response.IsImportant)
+            CreateCatResponse response = service.Execute(request.name, request.title);
+            return response;
+        }
+
+        private static void ShowNewKingToUser(CreateCatResponse response)
+        {
+            Console.Write("Hail the new king: ");
+
+            if (response.isCatImportant)
                 Console.ForegroundColor = ConsoleColor.Red;
             else
                 Console.ForegroundColor = ConsoleColor.Blue;
 
-            Console.WriteLine(response.GrandioseName);
+            Console.WriteLine(response.grandioseName);
             Console.ReadLine();
-        }
+        }        
     }
 }

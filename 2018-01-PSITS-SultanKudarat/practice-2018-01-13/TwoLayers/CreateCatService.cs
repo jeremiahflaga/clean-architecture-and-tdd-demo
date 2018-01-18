@@ -29,11 +29,16 @@ namespace TwoLayers
 
         private CreateCatResponse MakeResponse(Cat catFromDb)
         {
-            string grandioseName = string.Format("{0}, \"{1}\"", catFromDb.Name, catFromDb.Title);
+            string grandioseName;
+            if (string.IsNullOrEmpty(catFromDb.Title))
+                grandioseName = catFromDb.Name;
+            else
+                grandioseName = string.Format("{0}, \"{1}\"", catFromDb.Name, catFromDb.Title);
+
             CreateCatResponse response = new CreateCatResponse
             {
-                GrandioseName = grandioseName,
-                IsImportant = grandioseName.Length <= 10
+                grandioseName = grandioseName,
+                isCatImportant = grandioseName.Length <= 10
             };
 
             return response;
