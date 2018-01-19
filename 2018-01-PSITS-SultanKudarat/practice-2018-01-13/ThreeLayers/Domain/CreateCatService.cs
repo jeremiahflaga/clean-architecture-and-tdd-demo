@@ -9,8 +9,15 @@ namespace ThreeLayers
         public CreateCatResponse Execute(string name, string title)
         {
             CatsRepository catsRepository = new CatsRepository();
-            catsRepository.Add(name, title);
-            Cat catFromDb = catsRepository.Get(name);
+            Guid newCatId = Guid.NewGuid();
+            Cat newCat = new Cat(newCatId)
+            {
+                Name = name,
+                Title = title
+            };
+
+            catsRepository.Add(newCat);
+            Cat catFromDb = catsRepository.Get(newCatId);
 
             return MakeResponse(catFromDb);
         }

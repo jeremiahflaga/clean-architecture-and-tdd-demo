@@ -8,23 +8,16 @@ namespace ThreeLayers
     {
         private static IList<Cat> catsDb = new List<Cat>();
 
-        public void Add(string name, string title)
+        public void Add(Cat cat)
         {
-            Guid newCatId = Guid.NewGuid();
-            Cat newCat = new Cat(newCatId)
-            {
-                Name = name,
-                Title = title
-            };
-
-            catsDb.Add(newCat);
+            catsDb.Add(cat);
         }
 
-        public Cat Get(string name)
+        public Cat Get(Guid id)
         {
             return (from cat in catsDb
-                    where cat.Name == name
-                    select cat).Single();
+                    where cat.Id == id
+                    select cat).First();
         }
     }
 }
