@@ -7,8 +7,8 @@ namespace Domain.Repositories
 {
     public interface ICatsRepository
     {
-        void Add(string name, string title);
+        void Add(Cat cat);
 
-        Cat Get(string name);
+        Cat Get(Guid id);
     }
 }

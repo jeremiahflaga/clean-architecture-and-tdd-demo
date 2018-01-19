@@ -17,8 +17,15 @@ namespace Domain.Interactors.CreateCat
 
         public CreateCatResponse Execute(string name, string title)
         {
-            _respository.Add(name, title);
-            Cat catFromDb = _respository.Get(name);
+            Guid newCatId = Guid.NewGuid();
+            Cat newCat = new Cat(newCatId)
+            {
+                Name = name,
+                Title = title
+            };
+
+            _respository.Add(newCat);
+            Cat catFromDb = _respository.Get(newCatId);
 
             return MakeResponse(catFromDb);
         }
