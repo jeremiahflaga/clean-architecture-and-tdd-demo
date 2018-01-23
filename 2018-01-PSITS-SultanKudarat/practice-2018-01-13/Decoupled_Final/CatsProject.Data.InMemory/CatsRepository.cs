@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Data.InMemory
+namespace CatsProject.Data.InMemory
 {
     public class CatsRepository : ICatsRepository
     {

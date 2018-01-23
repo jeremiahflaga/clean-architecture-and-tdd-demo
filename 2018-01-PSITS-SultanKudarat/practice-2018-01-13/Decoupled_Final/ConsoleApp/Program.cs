@@ -1,5 +1,4 @@
-﻿using Data.InMemory;
-using Domain.Interactors.CreateCat;
+﻿using Domain.Interactors.CreateCat;
 using Domain.Repositories;
 using System;
 
@@ -34,7 +33,7 @@ namespace ConsoleApp
         private static CreateCatResponse ProcessRequest(CreateCatRequest request)
         {
             // process input
-            ICatsRepository repository = new CatsRepository();
+            ICatsRepository repository = new CatsProject.Data.SqlClient.CatsRepository();
             CreateCatInteractor service = new CreateCatInteractor(repository);
             CreateCatResponse response = service.Execute(request.name, request.title);
             return response;

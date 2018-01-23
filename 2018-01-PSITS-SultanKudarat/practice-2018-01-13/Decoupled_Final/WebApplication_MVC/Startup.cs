@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Data.InMemory;
 using Domain.Interactors.CreateCat;
 using Domain.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -25,7 +24,7 @@ namespace WebApplication_MVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped(typeof(ICatsRepository), typeof(CatsRepository));
+            services.AddScoped(typeof(ICatsRepository), typeof(CatsProject.Data.SqlClient.CatsRepository));
             services.AddScoped(typeof(CreateCatInteractor), typeof(CreateCatInteractor));
         }
 
