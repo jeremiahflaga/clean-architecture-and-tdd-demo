@@ -301,3 +301,6 @@ __pycache__/
 /captures
 .externalNativeBuild
 
+
+# For Java
+*.class

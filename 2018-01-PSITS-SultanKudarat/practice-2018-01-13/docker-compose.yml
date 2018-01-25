@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  webapplication_mvc:
+    image: webapplication_mvc
+    build:
+      context: .
+      dockerfile: WebApplication_MVC\Dockerfile
+
+  webapplication1_mvc:
+    image: webapplication1_mvc
+    build:
+      context: .
+      dockerfile: Decoupled_Final\WebApplication1_MVC\Dockerfile
+
